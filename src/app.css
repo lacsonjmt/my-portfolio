@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Resident Typewriter';
+    src: url('../public/fonts/ResidentTypewriter.woff');
+}
+
+@font-face {
+    font-family: 'Anonymous Pro';
+    src: url('../public/fonts/Anonymous_Pro.woff');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('../public/fonts/Caveat.ttf');
+}
+
+@font-face {
+    font-family: 'Typo Grotesk';
+    src: url('../public/fonts/Typo_Grotesk.otf') format('opentype');
+}
+
+.font-restype {
+    font-family: 'Resident Typewriter';
+}
+
+.font-apro {
+    font-family: 'Anonymous Pro';
+}
+
+.font-restype > .font-apro {
+    -webkit-text-stroke-width: 0px;
+}
+
+.font-caveat {
+    font-family: 'Caveat';
+}
+
+.font-typog {
+    font-family: 'Typo Grotesk';
+}
+
+.font-stroke {
+    -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
+}
+
+.font-stroke-big {
+    -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+/* Greeting */
+
+#greeting {
+    transform: skewY(-6deg);
+}
+
+/* Animations */
+/* Nav Twinkle Hover */
+
+.hover-blur-in:hover {
+    animation: fadeIn 1s;
+    animation: blur 1s;
+}
+
+#navs-header li {
+    color: white;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
+}
+
+/* Blur-in effect */
+
+.blurred {
+    filter: blur(.5rem);
+}
+
+.blur-in {
+    animation: fadeIn 1s;
+    animation: blur 1s;
+}
+
+@keyframes fadeIn {
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes blur {
+    0% { filter: blur(.5rem); }
+    100% { filter: blur(0px); }
+}
+
+/* Player Scroll */
+
+@keyframes song-scroll {
+    30% { transform: translateX(0) }
+    100% { transform: translateX(-100%) }
+}
+
+/* Player Dot Fade */
+
+.dot1, .dot2, .dot3 {
+    animation: fadeDot 1s alternate infinite;
+}
+
+.dot2 {
+    animation-delay: 400ms;
+}
+
+.dot3 {
+    animation-delay: 800ms;
+}
+
+@keyframes fadeDot {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+/* Wiggle */
+
+@keyframes wiggle {
+    0% { transform: rotate(1deg) }
+    4% { transform: rotate(1.5deg) }
+    8% { transform: rotate(2deg) }
+    35% { transform: rotate(-3deg) }
+    45% { transform: rotate(3.5deg) }
+    52% { transform: rotate(-4deg) }
+    68% { transform: rotate( b 3deg) }
+    92% { transform: rotate(-2deg) }
+    96% { transform: rotate(-1.5deg) }
+    100% { transform: rotate(-1deg) }
+}
+
+/* Typewriter I-Beam Fade */
+
+@keyframes iBeam {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+/* Shadow Glow */
+
+@keyframes glow {
+    0% { box-shadow: 0 0 #0000; }
+    100% { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+}
+
