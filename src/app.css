@@ -4,6 +4,12 @@
 
 /* Fonts */
 
+.wip {
+    font-family: 'Figtree';
+    color: yellow;
+
+}
+
 @font-face {
     font-family: 'Resident Typewriter';
     src: url('../public/fonts/ResidentTypewriter.woff');
@@ -22,6 +28,11 @@
 @font-face {
     font-family: 'Typo Grotesk';
     src: url('../public/fonts/Typo_Grotesk.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Octin Prison';
+    src: url('../public/fonts/Octin_Prison.otf') format('opentype');
 }
 
 .font-restype {
@@ -44,14 +55,18 @@
     font-family: 'Typo Grotesk';
 }
 
-.font-stroke {
-    -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: .2px;
-    -webkit-text-stroke-color: black;
+.font-octinp {
+    font-family: 'Octin Prison';
+}
+
+@layer components {
+    .font-stroke {
+        -webkit-text-stroke-width: .2px;
+        -webkit-text-stroke-color: black;
+    }
 }
 
 .font-stroke-big {
-    -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
 }

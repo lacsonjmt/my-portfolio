@@ -37,12 +37,12 @@ const toggleDark = () => {
 
 //*
 main.onscroll = () => {
-  // console.log(main.scrollTop, about.offsetTop, services.offsetTop);
+  console.log(window.innerHeight, main.scrollTop, about.offsetTop);
   toggleDark();
 };
 
 onresize = () => {
-  // console.log(main.scrollTop, about.offsetTop, services.offsetTop);
+  console.log(window.innerHeight, main.scrollTop, about.offsetTop);
   toggleDark();
 };
 //*/
