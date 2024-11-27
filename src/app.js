@@ -26,10 +26,10 @@ var about = document.querySelector('#about');
 var darkMode = false;
 
 const toggleDark = () => {
-  if ((main.scrollTop >= about.offsetTop) && darkMode == false) {
+  if ((main.scrollTop >= (about.offsetTop - (window.innerHeight * 0.2))) && darkMode == false) {
     darkMode = true;
     document.documentElement.classList.add('dark');
-  } else if ((main.scrollTop < about.offsetTop) && darkMode == true) {
+  } else if ((main.scrollTop < (about.offsetTop - (window.innerHeight * 0.2))) && darkMode == true) {
     darkMode = false;
     document.documentElement.classList.remove('dark');
   }
@@ -50,32 +50,97 @@ onresize = () => {
 var navButton = document.querySelector('#nav-button');
 var aboutSection = document.querySelector('#nav-button');
 
-// scroll 675 About
-
-// onresize = (e) => {
-//   console.log(window.innerWidth, window.innerHeight);
-// }
-
 // Music Player
 
 // Music Player Hover
 
+const resizePlayer = async (e, isBody = '') => {
+  switch (e+isBody) {
+    case 'mouseover':
+      if (window.innerWidth > 640) {
+        anime({
+          targets: '#m-player',
+          width: '20vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      } else {
+        anime({
+          targets: '#m-player',
+          width: '80vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      }
+      break;
+    case 'mouseout':
+      if (window.innerWidth > 640) {
+        anime({
+          targets: '#m-player',
+          width: '5vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      } else {
+        anime({
+          targets: '#m-player',
+          width: '20vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      }
+      break;
+    case 'touchstart':
+      if (window.innerWidth > 640) {
+        anime({
+          targets: '#m-player',
+          width: '20vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      } else {
+        anime({
+          targets: '#m-player',
+          width: '80vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      }
+    case 'touchstarttrue':
+      if (window.innerWidth > 640) {
+        anime({
+          targets: '#m-player',
+          width: '5vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      } else {
+        anime({
+          targets: '#m-player',
+          width: '20vw',
+          duration: 1000,
+          easing: 'easeOutExpo',
+        });
+      }
+      break;
+  }
+};
+
 mPlayer.addEventListener('mouseover', function (e) {
-  anime({
-    targets: '#m-player',
-    width: '20vw',
-    duration: 1000,
-    easing: 'easeOutExpo',
-  });
+  resizePlayer(e.type);
 });
 
 mPlayer.addEventListener('mouseout', function (e) {
-  anime({
-    targets: '#m-player',
-    width: '5vw',
-    duration: 1000,
-    easing: 'easeOutExpo',
-  })
+  resizePlayer(e.type);
+});
+
+mPlayer.addEventListener('touchstart', function (e) {
+  e.stopPropagation();
+  resizePlayer(e.type);
+});
+
+body.addEventListener('touchstart', function (e) {
+  resizePlayer(e.type, true);
 });
 
 // Music Player Controls
@@ -84,6 +149,8 @@ var mAudio = document.querySelector('#m-audio');
 var mControl = document.querySelector('#m-control');
 var mLabel = document.querySelector('#m-label');
 var mPing = document.querySelector('#m-ping');
+
+mPing.classList.remove('animate-ping');
 
 
 ['play', 'playing'].forEach( (e) => {
@@ -112,10 +179,8 @@ var mPing = document.querySelector('#m-ping');
             complete: () => {
               if ([...mPing.classList].includes('animate-ping')) {
                 mPing.classList.toggle('animate-ping');
-                console.log('toggled');
               } else {
                 mPing.classList.add('animate-ping');
-                console.log('added');
               };
             }
           });
@@ -125,15 +190,15 @@ var mPing = document.querySelector('#m-ping');
   });
 }); 
 
-mAudio.volume = .25;
+mAudio.volume = .1;
 mAudio.play();
 
 ['keydown', 'mousedown', 'pointerdown', 'pointerup', 'touchend'].forEach( (event) => {
-  document.body.addEventListener(event, (eventInner) => {  
-    if (eventInner.target.id != 'm-control') {
-      mAudio.volume = .25;
+  document.body.addEventListener(event, (e) => {  
+    if (e.target.id != 'm-control') {
+      mAudio.volume = .1;
       mAudio.play();
-    }    
+    }
   }, { once: true });
 });
 
@@ -159,67 +224,67 @@ if (!mAudio.paused || mAudio.currentTime) {
         duration: 500,
         complete: () => {
           if ([...mPing.classList].includes('animate-ping')) {
-            mPing.classList.toggle('animate-ping');
-            console.log('toggled');
+            mPing.classList.toggle('animate-ping');;
           } else {
             mPing.classList.add('animate-ping');
-            console.log('added');
           };
         }
       });
     }
   });
-}
+};
 
-mControl.addEventListener('click', () => {
-  if (mControl.src.includes('play-icon')) {
-    mAudio.volume = .25;
-    mAudio.play();    
-  } else if (mControl.src.includes('pause-icon')) {
-    mAudio.pause();
-    mControl.src = mControl.src.replace('pause','play');
-    mControl.style.transform = 'scale(1)';
-    anime({
-      targets: '#m-label, #dots',
-      keyframes: [
-        { opacity: 1},
-        { opacity: 0},
-      ],
-      easing: 'linear',
-      duration: 500,
-      complete: () => {
-        mLabel.innerHTML = 'Play Now';
-        anime({
-          targets: '#m-label, #dots',
-          keyframes: [
-            { opacity: 0},
-            { opacity: 1},
-          ],
-          easing: 'linear',
-          duration: 500,
-          complete: () => {
-            if ([...mPing.classList].includes('animate-ping')) {
-              mPing.classList.toggle('animate-ping');
-              console.log('toggled');
-            } else {
-              mPing.classList.add('animate-ping');
-              console.log('added');
-            };
-          }
-        });
-      }
-    });
-  }
+['click', 'touch'].forEach((event) => {
+  mControl.addEventListener(event, (e) => {
+    e.stopPropagation();
+    if (mControl.src.includes('play-icon')) {
+      mAudio.volume = .25;
+      mAudio.play();    
+    } else if (mControl.src.includes('pause-icon')) {
+      mAudio.pause();
+      mControl.src = mControl.src.replace('pause','play');
+      mControl.style.transform = 'scale(1)';
+      anime({
+        targets: '#m-label, #dots',
+        keyframes: [
+          { opacity: 1},
+          { opacity: 0},
+        ],
+        easing: 'linear',
+        duration: 500,
+        complete: () => {
+          mLabel.innerHTML = 'Play Now';
+          anime({
+            targets: '#m-label, #dots',
+            keyframes: [
+              { opacity: 0},
+              { opacity: 1},
+            ],
+            easing: 'linear',
+            duration: 500,
+            complete: () => {
+              if ([...mPing.classList].includes('animate-ping')) {
+                mPing.classList.toggle('animate-ping');
+              } else {
+                mPing.classList.add('animate-ping');
+              };
+            }
+          });
+        }
+      });
+    }
+  });
 });
 
-['mousedown', 'dragstart'].forEach( (e) => {
-  mControl.addEventListener(e, () => {
+['mousedown', 'dragstart', 'touchstart'].forEach( (event) => {
+  mControl.addEventListener(event, (e) => {
+    e.stopPropagation();
     mControl.style.transform = 'scale(0.8)';
   });
 });
 
-['mouseup', 'dragend', 'drop'].forEach( (e) => {
-  mControl.addEventListener(e, () => {
+['mouseup', 'dragend', 'drop', 'touchend'].forEach( (event) => {
+  mControl.addEventListener(event, () => {
     mControl.style.transform = 'scale(1)';
   });
 });
@@ -229,13 +294,13 @@ mControl.addEventListener('click', () => {
 const writerWords = ['Programmer', 'Tech VA', 'Developer']
 var tWriter = document.querySelector('#tWriter');
 
-const typeWriter = async () => {
+const typeWriter = async (wordList, element) => {
 
   const tErase = async (w) => {
     for (var i in [...w]) {
       await delay(75);
       w = w.substring(0, w.length - 1);
-      tWriter.innerHTML = w;
+      element.innerHTML = w;
     };
   };
 
@@ -244,21 +309,21 @@ const typeWriter = async () => {
     for (let i in [...w]) {
       await delay(100);
       str = w.substring(0, Number(i)+1);
-      tWriter.innerHTML = str;
+      element.innerHTML = str;
     }
   }
 
-  for (let i in writerWords) {
-    tErase(tWriter.innerHTML);
+  for (let i in wordList) {
+    tErase(element.innerHTML);
     await delay(1500);
-    tType(writerWords[i]);
+    tType(wordList[i]);
     await delay(1500);
              
   };
-  typeWriter();
+  typeWriter(wordList, element);
 };
 
-typeWriter();
+typeWriter(writerWords, tWriter);
 
 // navButton.onclick = (function (e) {
 //   anime({
