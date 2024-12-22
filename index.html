@@ -23,48 +23,40 @@
     </head>
 
     <body class="w-screen max-w-[2000px] mx-auto font-sans text-gray-900 antialiased bg-[url('../public/img/light-bg.png')] bg-no-repeat bg-cover bg-center transition-all duration-500 dark:bg-[url('../public/img/dark-bg.gif')]">
-        <main id="main" class="w-full scroll-smooth overflow-y-scroll snap-y snap-mandatory h-[100vh]">
-            <!-- @include('includes.player') -->
-            <section id="m-player" class="hidden z-20 group/player overflow-clip right-[10px] bottom-[5vw] w-[100px] lg:w-[5vw] lg:h-[5vw] lg:max-w-[20vw] lg:mr-4 lg:text-sm flex-column rounded-s-xl rounded-se-xl fixed ring-2 bg-slate-800 ring-slate-200 text-slate-200">
-                <div class="w-full h-full p-auto group-hover/player:opacity-0 delay-75 transition-opacity absolute top-0 left-0 duration-800 ease-in-out">
-                    <img src="public/img/music-icon-white.png" alt="" class="absolute h-full w-[5vw]">
-                    <img id="m-ping" src="public/img/music-icon-white.png" alt="" class="absolute h-full w-[5vw] left-0 top-0">
+        <main id="main" class="w-full scroll-smooth overflow-y-scroll h-[100vh] overflow-x-clip">
+            <!-- Music Player -->
+            <section id="m-player" class="hidden z-20 group/player overflow-clip right-[10px] bottom-[15vh] sm:bottom-[5vw] w-[20vw] sm:w-[5vw] h-[20vw] sm:h-[5vw] lg:max-w-[20vw] lg:mr-4 lg:text-sm flex-column rounded-s-xl rounded-se-xl fixed ring-2 bg-slate-800 ring-slate-200 text-slate-200">
+                <div class="w-full h-full group-hover/player:opacity-0 delay-75 transition-opacity absolute top-0 left-0 duration-800 ease-in-out">
+                    <img src="public/img/music-icon-white.png" alt="" class="absolute w-[20vw] sm:w-[5vw] h-full">
+                    <img id="m-ping" src="public/img/music-icon-white.png" alt="" class="absolute w-[20vw] sm:w-[5vw] h-full left-0 top-0 animate-ping">
                 </div>
                 <div class="w-full h-full opacity-0 group-hover/player:opacity-100 transition-opacity duration-800 ease-in delay-300 lg:divide-y-[1px] divide-gray-300">
                     <div class="lg:px-4 lg:py-1 h-1/2 overflow-hidden text-nowrap">
-                        <img id="m-control" class="inline h-full px-2 rounded-full animate-pulse" src="public/img/play-icon-white.png" alt="">
-                        <span id="m-label" class="align-bottom">Play Now</span><span id="dots" class="align-bottom"><span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span></span>
+                        <img id="m-control" class="inline h-full pl-1 py-1.5 md:px-2 md:py-0 align-bottom rounded-full animate-pulse" src="public/img/play-icon-white.png" alt="">
+                        <span id="m-label" class="align-middle">Play Now</span><span id="dots" class="align-bottom"><span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span></span>
                         <div class=""><audio id="m-audio" loop controlslist="nodownload" src="public/audio/svt-heavens-cloud.mp3"></audio></div>
                     </div>
-                    <div class="lg:px-4 lg:py-1 flex text-nowrap overflow-hidden relative">
-                        <div class="animate-song-scroll lg:pr-[5vw]">SEVENTEEN - Heaven's Cloud</div>
-                        <div class="animate-song-scroll lg:pr-[5vw]">SEVENTEEN - Heaven's Cloud</div>
+                    <div class="px-4 py-1 flex text-nowrap overflow-hidden relative">
+                        <div class="animate-song-scroll pr-[80vw] md:pr-[20vw]">SEVENTEEN - Heaven's Cloud</div>
+                        <div class="animate-song-scroll pr-[80vw] md:pr-[20vw]">SEVENTEEN - Heaven's Cloud</div>
                     </div>
                 </div>
             </section>
-            <!-- @include('includes.header') -->
-            <header class="w-full large:py-8 sticky snap-always snap-center overflow-visible">
+            <!-- Header -->
+            <header class="w-full sticky snap-always snap-center overflow-visible">
                 <div class="">
-                    <!-- @include('includes.bgheader') -->
+                    <!-- Header SVG -->
                     <div id="bg-header" class="absolute w-full">
-                        <svg id="bg-header-svg" class="absolute w-full" viewBox="0 0 1440 540" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id="b1" d="M0 0L1440 0V289.666L693.257 540L0 289.666L0 0Z" fill="url(#paint0_linear_301_6)"/>
-                            <path id="b2" d="M1440 289.666C1440 289.666 1090.9 540 693.257 540C295.612 540 0 289.666 0 289.666L693.257 540L1440 289.666Z" fill="url(#paint1_linear_301_6)"/>
-                            <path id="b3" d="M0,-0.00081h1440v22.695865L790.374676,31.90299c.048036.189341,0,66.648137-70.374676,66.648137v0v0c-69.774041,0-69.555301-66.462947-69.774041-66.648137L0,31.90299v-31.9038Z" fill="url(#paint1_linear_301_6)"/>
+                        <svg id="bg-header-svg" class="absolute w-full" viewBox="0 0 1440 540" preserveAspectRatio="none"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 289.153C1216.59 451.169 973.819 540 720 540C466.181 540 223.405 451.169 0 289.153L0 0H1440V289.153Z" fill="url(#paint0_linear_10_12)"/>
                             <defs>
-                                <linearGradient id="paint0_linear_301_6" x1="720" y1="0" x2="720" y2="540" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#8CA6CC"/>
-                                    <stop offset="0.0001" stop-color="#8CA6CC"/>
-                                    <stop offset="1" stop-color="#F0CBC3"/>
-                                </linearGradient>
-                                <linearGradient id="paint1_linear_301_6" x1="720" y1="0" x2="720" y2="540" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#8CA6CC"/>
-                                    <stop offset="0.0001" stop-color="#8CA6CC"/>
-                                    <stop offset="1" stop-color="#F0CBC3"/>
-                                </linearGradient>
+                            <linearGradient id="paint0_linear_10_12" x1="720" y1="0" x2="720" y2="540" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#8CA6CC"/>
+                            <stop offset="1" stop-color="#F0CBC3"/>
+                            </linearGradient>
                             </defs>
                         </svg>
-                    </div>                    
+                    </div>
                     <div id="nav-button" class="absolute top-[3%] drop-shadow-lg inset-x-0 mx-auto w-[40px] h-[42px] md:w-[52px] md:h-[55px] lg:w-[90px] lg:h-[95px] hover:cursor-pointer">
                         <svg id="circle-header" class="w-full h-full" width="90" height="95" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_df_1_6)">
@@ -93,12 +85,12 @@
                 </div>
                 <div id="navs-header" class="z-20 flex justify-between items-end top-0 antialiased">
                     <a draggable=false class="z-10" href="#">
-                        <h3 class="font-restype font-stroke text-[7vw] lg:text-[3vw] text-white pl-4 lg:pt-5 lg:pl-10">Jan's<span class="relative bottom-[2px] tracking-tighter font-apro pl-1 lg:pl-3 text-[5vw] lg:text-[2.4vw] font-medium">profile<span class="font-caveat text-[1rem] lg:text-2xl absolute top-3 lg:-top-6 left-0 animate-wiggle w-auto text-nowrap">K-pop Themed!</span></span></h3>
+                        <h3 class="pl-4 lg:pl-10 font-restype font-stroke text-[7vw] lg:text-[3vw] text-white">Jan's<span class="relative bottom-[2px] tracking-tighter font-apro pl-1 lg:pl-3 text-[5vw] lg:text-[2.4vw] font-medium">profile<span class="font-caveat text-[1rem] lg:text-2xl absolute top-3 lg:-top-6 left-0 animate-wiggle w-auto text-nowrap">K-pop Themed!</span></span></h3>
                     </a>
                     <div class="z-10 w-[50px] md:hidden text-white">
                         
                     </div>
-                    <ul class="hidden md:grid grid-cols-4 justify-between pr-3 lg:pr-16 pb-[1.5vw] lg:pb-2 md:text-sm lg:text-base xl:text-[1.4vw] text-white gap-x-5 lg:gap-x-6 xl:gap-x-10 font-apro font-medium ">
+                    <ul class="hidden md:grid grid-cols-4 justify-between self-center pr-3 lg:pr-16 md:text-sm lg:text-base xl:text-[1.4vw] 2xl:text-[28px] text-white gap-x-5 lg:gap-x-6 xl:gap-x-10 font-apro font-medium ">
                         <a draggable=false href="#about" class="relative group/about text-center hover:cursor-pointer hover:scale-[1.3] duration-500 text-right pr-2">
                             <img draggable=false src="public/img/stars.gif" alt="" class="absolute md:-top-1/3 lg:-top-1/3 xl:-top-1/2 2xl:-top-2/3 lg:translate-x-[15%] opacity-0 ease-in-out group-hover/about:opacity-100 group-hover/about:scale-[1.3] duration-500">
                             About
@@ -107,7 +99,7 @@
                             <img draggable=false src="public/img/stars.gif" alt="" class="absolute lg:-top-1/3 2xl:-top-2/3 opacity-0 group-hover/services:opacity-100 group-hover/services:scale-[1.7] duration-500">
                             Services
                         </a>
-                        <a draggable=false class="relative group/portfolio text-center hover:cursor-pointer hover:scale-[1.3] duration-500">
+                        <a draggable=false href="#portfolio" class="relative group/portfolio text-center hover:cursor-pointer hover:scale-[1.3] duration-500">
                             <img draggable=false src="public/img/stars.gif" alt="" class="absolute lg:-top-1/3 2xl:-top-2/3 opacity-0 ease-in-out group-hover/portfolio:opacity-100 group-hover/portfolio:scale-[1.7] duration-500">
                             Portfolio
                         </a>
@@ -126,23 +118,19 @@
                             Greetings!
                         </h1>
                     </div>        
-                    <img src="public/img/my-photo.png" alt="" class="w-[25vw] lg:w-[23vw] xl:w-[20vw] rounded-ee-[7rem] shadow-">
+                    <img src="public/img/my-photo.png" alt="" class="w-[25vw] lg:w-[23vw] xl:w-[20vw] max-w-[400px] rounded-ee-[7rem] shadow-">
                 </div>
                 <div class="w-full text-center relative font-caveat lg:right-[15vw] 2xl:right-[17vw] lg:text-[11vw] text-white font-stroke-big">I'm Jan,</div>
             </header>
-            <!-- @yield('content') -->
-            <!-- @extends('layouts.guest') -->
-            <!-- @section('content') -->
+            <!-- Content -->
             <section id="about" class="w-full lg:py-14 lg:px-[5vw] lg:-scroll-my-16 xl:-scroll-my-32 snap-always snap-center">
-                <div class="w-full grid lg:grid-cols-2 lg:text-lg">
-                    <div class="w-full my-auto text-center content-center pl-20">
-                        <img draggable=false src="public/img/myphoto-laptopback.png" alt="" class="rounded-xl dark:border-2 dark:border-slate-400 object-fit h-5/6 xl:h-2/3 2xl:h-2/3 2xl:ml-20">
-                    </div>
-                    <div class="my-auto lg:text-2xl lg:px-5 text-center content-center text-slate-800 dark:text-slate-200">
+                <div class="grid grid-cols-2 lg:text-lg">
+                    <img draggable=false src="public/img/myphoto-laptopback.png" alt="" class="!w-2/3 mx-auto rounded-xl dark:border-2 dark:shadow-lg dark:shadow-white">
+                    <div class="my-auto lg:text-2xl lg:px-5 text-center content-center text-slate-800 dark:text-slate-200 duration-500">
                         I am a <span class="font-apro lg:text-3xl px-5 py-1 rounded-full ring-2 ring-green-400"><u class="decoration-1"><span id="tWriter">Developer</span></u><span class="animate-iBeam">|</span></span>
                         <br><br>I have been working remotely for 2+ years total with experience scripting in<span class="font-apro lg:text-3xl"> Python, SQL,</span> and web development with<span class="font-apro lg:text-3xl"> Laravel</span>
                         <br>
-                        <div class="lg:h-24 lg:mt-16 inline-block flex flex-row gap-x-10 justify-center">
+                        <div class="h-[7vw] lg:h-24 lg:mt-16 inline-block flex flex-row gap-x-10 justify-center">
                             <a draggable=false href="//python.org/" target="_blank"><img draggable=false src="public/img/logo-python.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
                             <img draggable=false src="public/img/logo-sql.png" alt="" class="h-full rounded-full inline hover:scale-125 duration-300 cursor-pointer">
                             <a draggable=false href="//laravel.com/" target="_blank"><img draggable=false src="public/img/logo-laravel.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
@@ -151,14 +139,14 @@
                 </div>
             </section>
             <section id="services" class="w-auto lg:py-14 lg:-scroll-my-28 snap-always snap-center">
-                <h1 class="lg:text-5xl lg:mb-10 ml-[10vw] my-5 tracking-tighter text-slate-800 dark:text-slate-200"><i>How I can help</i></h1>
-                <div class="lg:h-[500px] mx-[7vw] grid grid-cols-5 border-2 border-slate-400 md:rounded-[4rem] shadow-2xl shadow-black dark:shadow-white overflow-hidden text-slate-800 dark:text-slate-200 dark:divide-slate-200">
+                <h1 class="lg:text-5xl lg:mb-10 ml-[10vw] my-5 tracking-tighter text-slate-800 dark:text-slate-200 duration-500"><i>How I can help</i></h1>
+                <div class="lg:h-[500px] mx-[7vw] grid grid-cols-5 border-2 border-slate-400 md:rounded-[4rem] shadow-2xl shadow-black dark:shadow-white overflow-hidden text-slate-800 dark:text-slate-200 dark:divide-slate-200 duration-500">
                     <div class="col-span-2 flex flex-col justify-around lg:text-3xl text-right font-typog divide-y-[2px] divide-slate-500 peer group">
-                        <div class="lg:pt-3 pr-4 h-full bg-[#fbfbfb] text-slate-800 content-center group-hover:bg-transparent dark:group-hover:text-slate-200 hover:!bg-[#fbfbfb] hover:!text-slate-800 duration-300 web">Web Development</div>
-                        <div class="pr-4 software h-full lg:pt-2 bg-transparent content-center focus:bg-white hover:bg-white hover:text-slate-800 duration-500">Software Development</div>
-                        <div class="pr-4 script h-full lg:pt-2 bg-transparent content-center hover:bg-[#1ea1ee] active:bg-[#1ea1ee] duration-500">Scripting</div>
-                        <div class="pr-4 ts h-full lg:pt-2 bg-transparent content-center hover:bg-white hover:text-slate-800 duration-500">Tech Support</div>
-                        <div class="pr-4 pm h-full lg:pt-2 pb-4 bg-transparent content-center hover:bg-[#4233a8] duration-500">Project Coordination</div>
+                        <div ontouchstart class="lg:pt-3 pr-4 h-full bg-[#fbfbfb] text-slate-800 content-center group-hover:bg-transparent dark:group-hover:text-slate-200 hover:!bg-[#fbfbfb] hover:!text-slate-800 duration-500 web">Web Development</div>
+                        <div ontouchstart class="pr-4 software h-full lg:pt-2 bg-transparent content-center focus:bg-white hover:bg-white hover:text-slate-800 duration-500">Software Development</div>
+                        <div ontouchstart class="pr-4 script h-full lg:pt-2 bg-transparent content-center hover:bg-[#1ea1ee] active:bg-[#1ea1ee] duration-500">Scripting</div>
+                        <div ontouchstart class="pr-4 ts h-full lg:pt-2 bg-transparent content-center hover:bg-white hover:text-slate-800 duration-500">Tech Support</div>
+                        <div ontouchstart class="pr-4 pm h-full lg:pt-2 pb-4 bg-transparent content-center hover:bg-[#4233a8] duration-500">Project Coordination</div>
                     </div>
                     <div class="col-span-3 relative flex flex-col peer-has-[:not(.web):hover]:[&_.web]:opacity-0 peer-has-[.web:hover]:[&_.web]:bg-[#fbfbfb] peer-has-[.software:hover]:[&_.software]:opacity-100 peer-has-[.script:hover]:[&_.script]:opacity-100 peer-has-[.pm:hover]:[&_.pm]:opacity-100 peer-has-[.ts:hover]:[&_.ts]:opacity-100">
                         <div class="absolute left-0 top-0 h-full w-full web bg-[#fbfbfb] duration-500 ">
@@ -184,12 +172,19 @@
                     </div>
                 </div>
             </section>
-            <div class="py-8 lg:py-14 font-octinp font-black lg:h-[100vh] lg:font-stroke text-[15vw] lg:text-[33vh] text-black leading-none flex flex-col snap-always snap-end">
-                <p class="h-full dark:!text-yellow-400">Work</p><p class="h-full !text-yellow-400 dark:!text-white">in</p><p class="h-full dark:!text-yellow-400">Progress</p>
+            <section id="portfolio" class="w-auto lg:py-14 lg:-scroll-my-28 snap-always snap-center">
+                <div class="w-full text-white text-lg">
+                    <h1 class="text-4xl 2xl:text-[5vw]">1. Skooltek</h1>
+                    <div class="bg-transparent w-full">
+                        <img height="500" src="public/img/demo-skooltek.gif" alt="" class="h-[500px] mx-auto">
+                    </div>                    
+                </div>
+            </section>
+            <div class="lg:pl-10 py-8 lg:py-14 lg:h-[100vh] flex flex-col font-octinp text-[20vw] xl:text-[33vh] text-black leading-none font-black snap-always snap-end animate-pulse">
+                <p class="h-full dark:!text-yellow-400 duration-1000">Work</p><p class="h-full !text-yellow-400 dark:!text-white duration-1000">in</p><p class="h-full dark:!text-yellow-400 duration-1000">Progress</p>
             </div>
             <section class="hidden">
-                <div class="opacity-100">
-    
+                <div class="">    
                     Basic Web Development (Laravel, jQuery, Bootstrap, MySQL), Git version control, and Atlassian project management tools.
     
                     my next milestone would be to become a full-stack software developer with knowledge in control systems, eventually leading to a career in Systems Engineering.
