@@ -680,6 +680,10 @@ video {
   display: none;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .h-1\/2 {
   height: 50%;
 }
@@ -692,12 +696,12 @@ video {
   height: 20vw;
 }
 
-.h-\[30vw\] {
-  height: 30vw;
-}
-
 .h-\[42px\] {
   height: 42px;
+}
+
+.h-\[500px\] {
+  height: 500px;
 }
 
 .h-\[7vw\] {
@@ -710,14 +714,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[120\%\] {
-  height: 120%;
-}
-
-.h-\[500px\] {
-  height: 500px;
 }
 
 .\!w-2\/3 {
@@ -845,6 +841,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .content-center {
@@ -1107,6 +1107,11 @@ video {
   font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-\[1rem\] {
   font-size: 1rem;
 }
@@ -1126,16 +1131,6 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-black {
@@ -1979,13 +1974,21 @@ main::-webkit-scrollbar-button {
     line-height: 1;
   }
 
+  .\32xl\:text-\[200px\] {
+    font-size: 200px;
+  }
+
   .\32xl\:text-\[28px\] {
     font-size: 28px;
   }
+}
 
-  .\32xl\:text-\[5vw\] {
-    font-size: 5vw;
-  }
+.dark\:block:where(.dark, .dark *) {
+  display: block;
+}
+
+.dark\:hidden:where(.dark, .dark *) {
+  display: none;
 }
 
 .dark\:divide-slate-200:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
