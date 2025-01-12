@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jan's Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon-C1Ynh7_X.ico">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        
+        <!-- Stylesheet -->
+
+      <script type="module" crossorigin src="/assets/index-D9mM2Zqw.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-CoO93J1p.css">
+    </head>
+
+    <body class="w-screen max-w-[2000px] mx-auto font-sans text-gray-900 antialiased bg-[url('../public/img/light-bg.png')] bg-no-repeat bg-cover bg-center transition-all duration-500 dark:bg-[url('../public/img/dark-bg.gif')]">
+        <main id="main" class="w-full scroll-smooth overflow-y-scroll h-[100vh] overflow-x-clip">
+            <!-- Music Player -->
+            <section id="m-player" class="hidden z-20 group/player overflow-clip right-[10px] bottom-[15vh] sm:bottom-[5vw] w-[20vw] sm:w-[5vw] h-[20vw] sm:h-[5vw] lg:max-w-[20vw] lg:mr-4 lg:text-sm flex-column rounded-s-xl rounded-se-xl fixed ring-2 bg-slate-800 ring-slate-200 text-slate-200">
+                <div class="w-full h-full group-hover/player:opacity-0 delay-75 transition-opacity absolute top-0 left-0 duration-800 ease-in-out">
+                    <img src="/assets/music-icon-white-BoXyg4TU.png" alt="" class="absolute w-[20vw] sm:w-[5vw] h-full">
+                    <img id="m-ping" src="/assets/music-icon-white-BoXyg4TU.png" alt="" class="absolute w-[20vw] sm:w-[5vw] h-full left-0 top-0 animate-ping">
+                </div>
+                <div class="w-full h-full opacity-0 group-hover/player:opacity-100 transition-opacity duration-800 ease-in delay-300 lg:divide-y-[1px] divide-gray-300">
+                    <div class="lg:px-4 lg:py-1 h-1/2 overflow-hidden text-nowrap">
+                        <img id="m-control" class="inline h-full pl-1 py-1.5 md:px-2 md:py-0 align-bottom rounded-full animate-pulse" src="/assets/play-icon-white-CrjBO0uR.png" alt="">
+                        <span id="m-label" class="align-middle">Play Now</span><span id="dots" class="align-bottom"><span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span></span>
+                        <div class=""><audio id="m-audio" loop controlslist="nodownload" src="public/audio/svt-heavens-cloud.mp3"></audio></div>
+                    </div>
+                    <div class="px-4 py-1 flex text-nowrap overflow-hidden relative">
+                        <div class="animate-song-scroll pr-[80vw] md:pr-[20vw]">SEVENTEEN - Heaven's Cloud</div>
+                        <div class="animate-song-scroll pr-[80vw] md:pr-[20vw]">SEVENTEEN - Heaven's Cloud</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Header -->
+            <header class="w-full sticky snap-always snap-center overflow-visible">
+                <div class="">
+                    <!-- Header SVG -->
+                    <div id="bg-header" class="absolute w-full">
+                        <svg id="bg-header-svg" class="absolute w-full" viewBox="0 0 1440 540" preserveAspectRatio="none"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 289.153C1216.59 451.169 973.819 540 720 540C466.181 540 223.405 451.169 0 289.153L0 0H1440V289.153Z" fill="url(#paint0_linear_10_12)"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_10_12" x1="720" y1="0" x2="720" y2="540" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#8CA6CC"/>
+                            <stop offset="1" stop-color="#F0CBC3"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div id="nav-button" class="absolute top-[3%] drop-shadow-lg inset-x-0 mx-auto w-[40px] h-[42px] md:w-[52px] md:h-[55px] lg:w-[90px] lg:h-[95px] hover:cursor-pointer">
+                        <svg id="circle-header" class="w-full h-full" width="90" height="95" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_df_1_6)">
+                                <circle cx="41" cy="41" r="40" fill="url(#paint0_linear_1_6)"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_df_1_6" x="0.5" y="0.5" width="89.5" height="94.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dx="5" dy="10"/>
+                                    <feGaussianBlur stdDeviation="2"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_6"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_6" result="shape"/>
+                                    <feGaussianBlur stdDeviation="0.25" result="effect2_foregroundBlur_1_6"/>
+                                </filter>
+                                <linearGradient id="paint0_linear_1_6" x1="41" y1="1" x2="41" y2="81" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#91A8CC"/>
+                                    <stop offset="1" stop-color="#9FADCB"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <image draggable=false src="/assets/nav-button-BzYbbyJx.gif" alt="" class="absolute top-0 inset-x-0 md:w-[50px] lg:w-[85px]">
+                    </div>
+                </div>
+                <div id="navs-header" class="z-20 flex justify-between items-end top-0 antialiased">
+                    <a draggable=false class="z-10" href="#">
+                        <h3 class="pl-4 lg:pl-10 font-restype font-stroke text-[7vw] lg:text-[3vw] text-white">Jan's<span class="relative bottom-[2px] tracking-tighter font-apro pl-1 lg:pl-3 text-[5vw] lg:text-[2.4vw] font-medium">profile<span class="font-caveat text-[1rem] lg:text-2xl absolute top-3 lg:-top-6 left-0 animate-wiggle w-auto text-nowrap">K-pop Themed!</span></span></h3>
+                    </a>
+                    <div class="z-10 w-[50px] md:hidden text-white">
+                        
+                    </div>
+                    <ul class="hidden md:grid grid-cols-4 justify-between self-center pr-3 lg:pr-16 md:text-sm lg:text-base xl:text-[1.4vw] 2xl:text-[28px] text-white gap-x-5 lg:gap-x-6 xl:gap-x-10 font-apro font-medium ">
+                        <a draggable=false href="#about" class="relative group/about text-center hover:cursor-pointer hover:scale-[1.3] duration-500 text-right pr-2">
+                            <img draggable=false src="/assets/stars-DzjUglWY.gif" alt="" class="absolute md:-top-1/3 lg:-top-1/3 xl:-top-1/2 2xl:-top-2/3 lg:translate-x-[15%] opacity-0 ease-in-out group-hover/about:opacity-100 group-hover/about:scale-[1.3] duration-500">
+                            About
+                        </a>
+                        <a draggable=false href="#services" class="relative group/services text-center hover:cursor-pointer hover:scale-[1.3] duration-500">
+                            <img draggable=false src="/assets/stars-DzjUglWY.gif" alt="" class="absolute lg:-top-1/3 2xl:-top-2/3 opacity-0 group-hover/services:opacity-100 group-hover/services:scale-[1.7] duration-500">
+                            Services
+                        </a>
+                        <a draggable=false href="#portfolio" class="relative group/portfolio text-center hover:cursor-pointer hover:scale-[1.3] duration-500">
+                            <img draggable=false src="/assets/stars-DzjUglWY.gif" alt="" class="absolute lg:-top-1/3 2xl:-top-2/3 opacity-0 ease-in-out group-hover/portfolio:opacity-100 group-hover/portfolio:scale-[1.7] duration-500">
+                            Portfolio
+                        </a>
+                        <a draggable=false class="relative group/contact text-center hover:cursor-pointer hover:scale-[1.25] duration-500">
+                            <img draggable=false src="/assets/stars-DzjUglWY.gif" alt="" class="absolute lg:-top-1/3 2xl:-top-2/3 opacity-0 ease-in-out group-hover/contact:opacity-100 group-hover/contact:scale-[1.7] duration-500">
+                            Contact
+                        </a>
+                    </ul>
+                </div>
+                <div class="relative lg:top-14 xl:top-28 2xl:top-36 flex justify-center gap-x-14 duration-500">
+                    <div class="relative self-center lg:bottom-10">
+                        <img src="/assets/twinkle1-CSQeTWzo.gif" alt="" class="absolute lg:-top-[110%] 2xl:-top-[200%] lg:translate-x-[40%] scale-[.35]">
+                        <img src="/assets/twinkle2-Bo7mSD7b.gif" alt="" class="absolute lg:-top-[50%] 2xl:-top-[100%] lg:-translate-x-[55%] scale-[.2]">
+                        <img src="/assets/twinkle3-vzE47lGw.gif" alt="" class="absolute lg:-top-[5%] 2xl:-top-[40%] lg:-translate-x-[5%] scale-[.3]">
+                        <h1 id="greeting" class="lg:text-[6vw] 2xl:text-7xl text-white font-caveat">
+                            Greetings!
+                        </h1>
+                    </div>        
+                    <img src="/assets/my-photo-BYAfQWYA.png" alt="" class="w-[25vw] lg:w-[23vw] xl:w-[20vw] max-w-[400px] rounded-ee-[7rem] shadow-">
+                </div>
+                <div class="w-full text-center relative font-caveat lg:right-[15vw] 2xl:right-[17vw] lg:text-[11vw] text-white font-stroke-big">I'm Jan,</div>
+            </header>
+            <!-- Content -->
+            <section id="about" class="w-full lg:py-14 lg:px-[5vw] lg:-scroll-my-16 xl:-scroll-my-32 snap-always snap-center">
+                <div class="grid grid-cols-2 lg:text-lg">
+                    <img draggable=false src="/assets/myphoto-laptopback-B1u3Y03m.png" alt="" class="!w-2/3 mx-auto my-auto rounded-xl dark:border-2 dark:shadow-lg dark:shadow-white">
+                    <div class="my-auto lg:text-2xl lg:px-5 text-center content-center text-slate-800 dark:text-slate-200 duration-500">
+                        I am a <span class="font-apro lg:text-3xl px-5 py-1 rounded-full ring-2 ring-green-400"><u class="decoration-1"><span id="tWriter">Developer</span></u><span class="animate-iBeam">|</span></span>
+                        <br><br>I have been working remotely for 3 years with experience scripting in<span class="font-apro lg:text-3xl"> Python, SQL,</span> and web development with<span class="font-apro lg:text-3xl"> Laravel</span>
+                        <br>
+                        <div class="h-[7vw] lg:h-24 lg:mt-16 inline-block flex flex-row gap-x-10 justify-center">
+                            <a draggable=false href="//python.org/" target="_blank"><img draggable=false src="/assets/logo-python-CV5-Yspr.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                            <img draggable=false src="/assets/logo-sql-DUXQZq5W.png" alt="" class="h-full rounded-full inline hover:scale-125 duration-300 cursor-pointer">
+                            <a draggable=false href="//laravel.com/" target="_blank"><img draggable=false src="/assets/logo-laravel-BhORMSEN.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                        </div>
+                        <br>
+                        I utilize Git and have also worked with IAM roles for AWS EC2 servers deployed and scaled under Elastic Beanstalk. I am also familiar with both Atlassian and Azure DevOps platforms.
+                        <br>
+                        <div class="h-[7vw] lg:h-24 lg:mt-16 inline-block flex flex-row gap-x-10 justify-center">
+                            <a draggable=false href="//git-scm.com/" target="_blank"><img draggable=false src="data:image/png;base64,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" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                            <a class="dark:hidden" draggable=false href="//aws.amazon.com/" target="_blank"><img draggable=false src="/assets/logo-aws-light-ri464_Yf.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                            <a class="dark:block hidden" draggable=false href="//aws.amazon.com/" target="_blank"><img draggable=false src="/assets/logo-aws-dark-DlFbYjQK.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                            <a draggable=false href="//www.atlassian.com/software/jira" target="_blank"><img draggable=false src="/assets/logo-jira-9ya0tKtA.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                        </div>
+                        <div class="h-[7vw] lg:h-24 lg:mt-16 inline-block flex flex-row gap-x-10 justify-center">
+                            <a draggable=false href="//bitbucket.org/product/" target="_blank"><img draggable=false src="data:image/png;base64,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" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                            <a draggable=false href="//azure.microsoft.com/en-us/products/devops" target="_blank"><img draggable=false src="/assets/logo-ado-Cxud5iRb.png" alt="" class="h-full inline hover:scale-125 duration-300"></a>
+                        </div><br>
+                    </div>
+                </div>
+            </section>
+            <section id="services" class="w-auto lg:py-14 lg:-scroll-my-28 snap-always snap-center">
+                <h1 class="lg:text-5xl lg:mb-10 ml-[10vw] my-5 tracking-tighter text-slate-800 dark:text-slate-200 duration-500"><i>How I can help</i></h1>
+                <div class="lg:h-[500px] mx-[7vw] grid grid-cols-5 border-2 border-slate-400 md:rounded-[4rem] shadow-2xl shadow-black dark:shadow-white overflow-hidden text-slate-800 dark:text-slate-200 dark:divide-slate-200 duration-500">
+                    <div class="col-span-2 flex flex-col justify-around lg:text-3xl text-right font-typog divide-y-[2px] divide-slate-500 peer group">
+                        <div ontouchstart class="lg:pt-3 pr-4 h-full bg-[#fbfbfb] text-slate-800 content-center group-hover:bg-transparent dark:group-hover:text-slate-200 hover:!bg-[#fbfbfb] hover:!text-slate-800 duration-500 web">Web Development</div>
+                        <div ontouchstart class="pr-4 software h-full lg:pt-2 bg-transparent content-center focus:bg-white hover:bg-white hover:text-slate-800 duration-500">Software Development</div>
+                        <div ontouchstart class="pr-4 script h-full lg:pt-2 bg-transparent content-center hover:bg-[#1ea1ee] active:bg-[#1ea1ee] duration-500">Scripting</div>
+                        <div ontouchstart class="pr-4 ts h-full lg:pt-2 bg-transparent content-center hover:bg-white hover:text-slate-800 duration-500">Tech Support</div>
+                        <div ontouchstart class="pr-4 pm h-full lg:pt-2 pb-4 bg-transparent content-center hover:bg-[#4233a8] duration-500">Project Coordination</div>
+                    </div>
+                    <div class="col-span-3 relative flex flex-col peer-has-[:not(.web):hover]:[&_.web]:opacity-0 peer-has-[.web:hover]:[&_.web]:bg-[#fbfbfb] peer-has-[.software:hover]:[&_.software]:opacity-100 peer-has-[.script:hover]:[&_.script]:opacity-100 peer-has-[.pm:hover]:[&_.pm]:opacity-100 peer-has-[.ts:hover]:[&_.ts]:opacity-100">
+                        <div class="absolute left-0 top-0 h-full w-full web bg-[#fbfbfb] duration-500 ">
+                            <img draggable=false class="h-full mr-auto object-cover" src="/assets/anim-webdev-CXnGqPa6.gif" alt="">
+                            <p class="absolute lg:w-1/2 right-0 top-0 lg:text-md p-10 xl:text-lg bg-[#fbfbfb]/90 rounded-2xl shadow-2xl text-slate-800">Web development in <b>LAMP or PHP (Laravel, Herd)</b> as backend, <b>MySQL, SQLite, Tailwind CSS, Bootstrap 5, AJAX</b><br><br>surface level knowledge on <b>Wordpress, SEO, Node.js, Svelte, AWS Elastic Beanstalk and EC2, CI/CD, Containerization</b></p>
+                        </div>
+                        <div class="absolute left-0 top-0 flex flex-row h-full w-full software bg-white opacity-0 duration-500 ">
+                            <img draggable=false class="h-auto ml-auto object-cover" src="/assets/anim-softdev-CVEBEqsI.gif" alt="">
+                            <p class="absolute lg:w-1/2 left-0 top-0 lg:text-md p-10 xl:text-lg bg-white/90 rounded-2xl shadow-2xl text-slate-800">Software development in Inductive Automation <b>Ignition 7/8</b> Platform<br><br>Basic Control Systems; <b>Vision HMI</b> design, development and maintenance;<br><br>Exposure to <b>Kepware</b> and <b>Cygnet; MS SQL Server, Azure Data Factory</b></p>
+                        </div>
+                        <div class="absolute left-0 top-0 flex flex-row h-full w-full script bg-[#1ea1ee] opacity-0 duration-500 ">
+                            <img draggable=false class="h-full ml-auto object-cover" src="/assets/anim-script-CseqJaK9.gif" alt="">
+                            <p class="absolute lg:w-1/2 xl:w-1/3 left-0 top-0 lg:text-md p-10 xl:text-lg bg-[#1ea1ee]/90 text-white rounded-2xl shadow-2xl text-slate-800">Scripting in <b>JavaScript, Python, SQL, T-SQL</b><br><br>Basic <b>Shell Scripting; Web</b> and <b>filesystem Crawlers</b><br><br>Using the <b>Ignition Script Module</b> to create scheduled reports, send datasets, etc.</p>
+                        </div>
+                        <div class="absolute left-0 top-0 flex flex-row h-full w-full ts bg-[#fbfbfb] opacity-0 duration-500 ">
+                            <img draggable=false class="h-full mr-auto object-cover" src="/assets/anim-techsupport-DcSpx09d.gif" alt="">
+                            <p class="absolute lg:w-1/2 right-0 top-0 lg:text-md p-10 xl:text-lg bg-[#fbfbfb]/90 rounded-2xl shadow-2xl text-slate-800"> <b>Impeccable English<br>Great comunication</b><br><br><b>Voice</b> and <b>non-voice correspondence</b><br><br><b>Google Suite, Spreadsheets</b><br><br>Will provide prompt <b>Technical Support</b> keeping customer relationship in mind</p>
+                        </div>
+                        <div class="absolute left-0 top-0 flex flex-row h-full w-full pm bg-[#4233a8] opacity-0 duration-500 ">
+                            <img draggable=false class="h-full ml-auto object-cover" src="/assets/anim-pm-CSTrLD-h.gif" alt="">
+                            <p class="absolute lg:w-1/2 xl:w-1/3 left-0 top-0 lg:text-md p-10 xl:text-lg bg-[#4233a8]/90 text-white rounded-2xl shadow-2xl text-slate-800">Project Management Tools:<br><br><b>DevOps, Atlassian Suite, Microsoft Dataverse</b><br><br><b>Project Coordination</b>;<br><br><b><i>Willing to upskill to Project Management</i></b></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="lg:pl-10 py-8 lg:py-14 lg:h-[100vh] flex flex-col font-octinp text-[20vw] xl:text-[33vh] text-black leading-none font-black snap-always snap-end animate-pulse">
+                <p class="h-full dark:!text-yellow-400 duration-1000">Work</p><p class="h-full !text-yellow-400 dark:!text-white duration-1000">in</p><p class="h-full dark:!text-yellow-400 duration-1000">Progress</p>
+            </div>
+            <section class="hidden">
+                <div class="">    
+                    Basic Web Development (Laravel, jQuery, Bootstrap, MySQL), Git version control, and Atlassian project management tools.
+    
+                    my next milestone would be to become a full-stack software developer with knowledge in control systems, eventually leading to a career in Systems Engineering.
+                </div>
+            </section>
+            <!-- @endsection -->
+        </main>
+    </body>
+
+</html>
